@@ -1,0 +1,94 @@
+{"restaurants": [
+	{
+		"id": "1",
+		"name": "Niwa Japanese BBQ",
+		"photo": "https://s3-media2.fl.yelpcdn.com/bphoto/JExDsJFyuIO9J1tF1l0g9w/ls.jpg",
+		"address": "2939 Main St\nDallas, TX 75226",
+		"hours": "11:00 am - 9:00 pm",
+		"rating": 5
+	},
+	{
+		"id": "2",
+		"name": "The Porch",
+		"photo": "https://s3-media3.fl.yelpcdn.com/bphoto/SGBcmcUgnKoCp5KBvc73uw/ls.jpg",
+		"address": "2912 N Henderson Ave\nDallas, TX 75206",
+		"hours": "11:00 am - 10:00 pm",
+		"rating": 4
+	},
+	{
+		"id": "3",
+		"name": "Pie Tap Pizza Workshop Bar",
+		"photo": "https://s3-media1.fl.yelpcdn.com/bphoto/-GbbxuUX1XtuzaGVxn_fcg/ls.jpg",
+		"address": "1212 Oak Lawn Ave\nSte 131\nDallas, TX 75207",
+		"hours": "11:00 am - 10:00 pm",
+		"rating": 4.5
+	},
+	{
+		"id": "4",
+		"name": "Monkey King Noodle",
+		"photo": "https://s3-media2.fl.yelpcdn.com/bphoto/QSp8-GlOMUS0Ob7eb3_WKw/ls.jpg",
+		"address": "2933 Main St\nDallas, TX 75226",
+		"hours": "11:00 am - 10:00 pm",
+		"rating": 3.5
+	}
+],
+"reviews": {
+	"1": [
+		{
+			"rating": 5,
+			"name": "Valentina",
+			"date": "1/17/2017",
+			"comments": "Great experience! Fun date place and the people are so nice so you should try it soon!"
+		},
+		{
+			"rating": 5,
+			"name": "Marcus",
+			"date": "1/17/2017",
+			"comments": "Amazing food. Such a fun, interactive experience. Matt the GM was phenomenal. Recommended some amazing sake! Decor is also on point. A new must try in Dallas!"
+		},
+		{
+			"rating": 5,
+			"name": "Travis",
+			"date": "1/24/2017",
+			"comments": "This place is really cool. Perfect date spot. Enough room to have a big party though. Moderately priced with a great drink menu and friendly staff."
+		}
+	],
+	"2": [
+		{
+			"rating": 5,
+			"name": "Tara",
+			"date": "6/7/2016",
+			"comments": "Outdoor seating on a summer night, original cocktails, the best selection. I had the shaved prime rib sandwich and my friend had the brisket enchiladas. I recommend both."
+		},
+		{
+			"rating": 4,
+			"name": "Amanda",
+			"date": "1/19/2017",
+			"comments": "Been here a few times for a friend's birthday party and a late brunch- love trying something new every time, the menu has so many different options to pick from! The food and service is always great! For dinner I got the salmon burger, it was cooked to perfection. When I came for brunch I got the Country Club- there was so much food I had to bring the other half home with me. You can pick a side of fries, fruit, salad or chips. I went with a side of fries."
+		}
+	],
+	"3": [
+		{
+			"rating": 5,
+			"name": "Maggie",
+			"date": "10/27/2016",
+			"comments": "Absolutely awesome pizza and environment. From simple pepperoni to date pistachio pizza! The 2 we got were amazing. Great local beers on tap. Indoor and outdoor seating. Kid friendly. They have high chairs and it is loud enough (but not loud) that if your kid screams it'll be fine. Great service. Many people on staff which helps you get your food and what you need smoothly and quickly. If we lived closer we'd be back frequently!"
+		},
+		{
+			"rating": 5,
+			"name": "Brian",
+			"date": "12/1/2016",
+			"comments": "Nice atmosphere. An ok selection of beer, and variety of local beers on tap. It's one of those modern, but eclectic designed restaurants. I will say I like the pizzas variety. I had the Mushrooms (Mushroom,bacon, fried egg, caramelized onions and mozzarella, which was fantastic."
+		}
+		
+	],
+	"4": [
+		{
+			"rating": 3,
+			"name": "Shell",
+			"date": "1/10/2017",
+			"comments": "Noodle is okay but probably not worth the cost. It's a cute place and I like the concept of the container structure. The area is reviving and so it's a fun place to hang out and sometimes there's a boba tea truck next to them. I like that idea. But the food is so so, I've been to better noodle places."
+		}
+	]
+}
+}
