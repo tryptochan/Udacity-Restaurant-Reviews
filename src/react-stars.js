@@ -1,3 +1,4 @@
+/* eslint-disable */
 import React, { Component, PropTypes } from 'react'
 
 const parentStyles = {
@@ -8,9 +9,14 @@ const parentStyles = {
 const defaultStyles = {
   position: 'relative',
   overflow: 'hidden',
-  cursor:   'pointer',
   display:  'block',
   float:    'left'
+}
+
+const hidden = {
+  position: 'absolute',
+  left: -10000,
+  top: 'auto',
 }
 
 const getHalfStarStyles = (color, uniqueness) => {
@@ -39,14 +45,10 @@ class ReactStars extends Component {
 
     if(typeof props.edit === 'undefined') {
       props.edit = true
-    } else {
-      props.edit = false
     }
 
     if(typeof props.half === 'undefined') {
       props.half = true
-    } else {
-      props.half = false
     }
 
     this.state = {
@@ -174,6 +176,22 @@ class ReactStars extends Component {
     this.props.onChange(value)
   }
 
+  handleKeyDown(event) {
+    if (!this.state.config.edit) return;
+    if ([37, 38, 39, 40].indexOf(event.keyCode) === -1) return;
+    let value;
+    if (event.keyCode === 39 || event.keyCode === 38) {
+      value = Math.min(this.state.config.count, this.state.value+1)
+    } else if (event.keyCode === 37 || event.keyCode === 40) {
+      value = Math.max(0, this.state.value-1) 
+    }
+    this.setState({
+      stars: this.getStars(value),
+      value: value
+    });
+    event.preventDefault();
+  }
+
   renderHalfStarStyleElement() {
     const { config, uniqueness } = this.state
     return (
@@ -185,7 +203,7 @@ class ReactStars extends Component {
 
   renderStars() {
     const { halfStar, stars, uniqueness } = this.state
-    const { color1, color2, size, char, half } = this.state.config
+    const { color1, color2, size, char, half, edit } = this.state.config
     return stars.map((star, i) => {
       let starClass = ''
       if(half && !halfStar.hidden && halfStar.at === i) {
@@ -193,6 +211,7 @@ class ReactStars extends Component {
       }
       const style = Object.assign({}, defaultStyles, {
         color:    star.active ? color2 : color1,
+        cursor: edit ? 'pointer' : 'default',
         fontSize: `${size}px`
       })
       return (
@@ -200,6 +219,8 @@ class ReactStars extends Component {
           className={starClass}
           style={style}
           key={i}
+          role="presentation"
+          aria-hidden={true}
           data-index={i}
           data-forhalf={char}
           onMouseOver={this.mouseOver.bind(this)}
@@ -219,7 +240,18 @@ class ReactStars extends Component {
     } = this.props
 
     return (
-      <div className={className} style={parentStyles}>
+      <div className={className} style={parentStyles}
+          tabIndex={this.state.config.edit ? 0 : -1}
+          onKeyDown={this.handleKeyDown.bind(this)}
+          role="presentation"
+          aria-describedby={'star-description-'+this.state.uniqueness}
+      >
+        <p style={hidden}
+          id={'star-description-'+this.state.uniqueness}
+          aria-live={this.state.config.edit ? 'polite' : 'off'}
+          aria-atomic={true}
+        >
+           {this.state.value} {this.state.value === 1 ? 'star' : 'stars'} rating</p>
         {this.state.config.half ?
         this.renderHalfStarStyleElement() : ''}
         {this.renderStars()}
